@@ -1,0 +1,9 @@
+{
+  "name": "task-scheduler",
+  "version": "1.0.0",
+  "description": "Task scheduler",
+  "main": "index.js",
+  "repository": "https://github.com/budarin/task-scheduler.git",
+  "author": "Vadim Budarin <budarin-vv@yandex.ru>",
+  "license": "MIT"
+}
