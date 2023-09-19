@@ -1,2 +1,2 @@
-# task-scheduler
-Yet another task scheduler
+# task-queue
+Yet another task queue
