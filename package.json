@@ -1,9 +1,9 @@
 {
-  "name": "task-scheduler",
+  "name": "task-queue",
   "version": "1.0.0",
-  "description": "Task scheduler",
+  "description": "Task queue",
   "main": "index.js",
-  "repository": "https://github.com/budarin/task-scheduler.git",
+  "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
   "license": "MIT"
 }
