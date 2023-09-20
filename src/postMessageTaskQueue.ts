@@ -1,3 +1,4 @@
+type Task = () => void;
 const tasks = [] as Task[];
 const channel = new MessageChannel();
 

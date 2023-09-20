@@ -1,8 +1,9 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Task queue",
   "main": "index.js",
+  "types": "./dist/index.d.ts",
   "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
   "license": "MIT",
@@ -31,7 +32,7 @@
   "typesVersions": {
     ">=4.2": {
       "*": [
-        "types/*"
+        "./dist/types/*"
       ]
     }
   }

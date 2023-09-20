@@ -1,3 +1,4 @@
+type Task = () => void;
 const tasks = [] as Task[];
 
 export const taskQueue = {
