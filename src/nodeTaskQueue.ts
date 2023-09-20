@@ -13,13 +13,13 @@ export const taskQueue = {
             const task = tasks.shift();
 
             if (task) {
-                setImmediate(() => {
-                    try {
-                        task();
-                    } catch (error) {
-                        console.error('[taskQueue] Error while running task', error);
-                    }
-                });
+                // setImmediate(() => {
+                try {
+                    task();
+                } catch (error) {
+                    console.error('[taskQueue] Error while running task', error);
+                }
+                // });
             }
         }
     },
