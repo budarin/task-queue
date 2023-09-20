@@ -1,6 +1,6 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Task queue",
   "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
@@ -9,17 +9,17 @@
   "types": "./dist/cjs/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
-    "./*": {
+    ".": {
       "import": {
-        "types": "./dist/esm/*.d.ts",
-        "default": "./dist/esm/*.js"
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
       },
       "module": {
-        "types": "./dist/esm/*.d.ts",
-        "default": "./dist/esm/*.js"
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
       },
-      "types": "./dist/types/*.d.ts",
-      "default": "./dist/cjs/*.js"
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/cjs/index.js"
     }
   },
   "devDependencies": {
