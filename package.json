@@ -1,6 +1,6 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Task queue",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
@@ -26,8 +26,8 @@
     ".": {
       "types": "./dist/types/index.d.ts",
       "import": {
-        "types": "./dist/esm/index.d.mts",
-        "default": "./dist/esm/index.mjs"
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
       },
       "module": "./dist/esm/index.js",
       "default": "./dist/cjs/index.js"
