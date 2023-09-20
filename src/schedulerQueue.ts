@@ -1,4 +1,6 @@
-type Task = () => void;
+import { checkForBrowserEnv } from './checkForBrowserEnv.js';
+
+checkForBrowserEnv();
 
 const tasks = [] as Task[];
 
