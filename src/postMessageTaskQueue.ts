@@ -24,7 +24,9 @@ channel.port1.onmessage = async function () {
     if (task && typeof task === 'function') {
         try {
             task();
-        } catch (error) {}
+        } catch (error) {
+            console.error('[postMessageTaskQueue] Error while running task', error);
+        }
     }
 
     if (tasks.length > 0) {
