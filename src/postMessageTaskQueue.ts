@@ -5,7 +5,6 @@ checkForBrowserEnv();
 const tasks = [] as Task[];
 const channel = new MessageChannel();
 const hasNavigatorScheduling =
-    'navigator' in globalThis &&
     'scheduling' in navigator &&
     //@ts-ignore
     'isInputPending' in navigator.scheduling;
