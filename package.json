@@ -1,6 +1,6 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Task queue",
   "main": "index.js",
   "repository": "https://github.com/budarin/task-queue.git",
@@ -11,13 +11,28 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "sh ./scripts/build.sh",
     "npm-publish": "npm run build && npm publish",
     "upgrade deps": "yarn upgrade-interactive --latest;",
-    "show_what-will-be-published": "npm pack --dry-run"
+    "show what will be published": "npm pack --dry-run"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    "./*": {
+      "types": "./types/*.d.ts",
+      "require": "./cjs/*.js",
+      "import": "./esm/*.js",
+      "default": "./esm/*.js"
+    }
+  },
+  "typesVersions": {
+    ">=4.2": {
+      "*": [
+        "types/*"
+      ]
+    }
   }
 }

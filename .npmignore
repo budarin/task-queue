@@ -1,4 +1,8 @@
-.vscode
 src
-tsconfig.json
+scripts
+.vscode
 .prettierrc
+tsconfig.json
+tsconfig.cjs.json
+tsconfig.esm.json
+tsconfig.types.json
