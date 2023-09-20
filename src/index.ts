@@ -4,4 +4,5 @@ import { taskQueue as postMessageTaskQueue } from './postMessageTaskQueue.js';
 
 const hasScheduler = 'scheduler' in globalThis;
 
-export const taskQueue = window ? (hasScheduler ? schedulerQueue : postMessageTaskQueue) : nodeTaskQueue;
+export const taskQueue =
+    'window' in globalThis ? (hasScheduler ? schedulerQueue : postMessageTaskQueue) : nodeTaskQueue;
