@@ -1,9 +1,12 @@
 {
-  "name": "task-queue",
+  "name": "@budarin/task-queue",
   "version": "1.0.0",
   "description": "Task queue",
   "main": "index.js",
   "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
