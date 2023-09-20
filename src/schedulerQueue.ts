@@ -3,7 +3,7 @@ type Task = () => void;
 const tasks = [] as Task[];
 
 export const schedulerQueue = {
-  push: (task) => {
+  push: (task: Task) => {
     tasks.push(task);
   },
 

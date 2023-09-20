@@ -1,5 +1,6 @@
 import { schedulerQueue } from "./schedulerQueue.js";
 import { postMessageTaskQueue } from "./postMessageTaskQueue.js";
 
-export const taskQueue =
-  "scheduler" in globalThis ? schedulerQueue : postMessageTaskQueue;
+const hasScheduler = "scheduler" in globalThis;
+
+export const taskQueue = hasScheduler ? schedulerQueue : postMessageTaskQueue;

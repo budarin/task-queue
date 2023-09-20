@@ -2,6 +2,11 @@ type Task = () => void;
 
 const tasks = [] as Task[];
 const channel = new MessageChannel();
+const hasNavigatorScheduling =
+  "navigator" in globalThis &&
+  "scheduling" in navigator &&
+  //@ts-ignore
+  "isInputPending" in navigator.scheduling;
 
 function yieldToMain() {
   return new Promise((resolve) => {
@@ -24,13 +29,8 @@ channel.port1.onmessage = async function () {
     }
 
     if (tasks.length > 0) {
-      if (
-        "scheduling" in navigator &&
-        //@ts-ignore
-        "isInputPending" in navigator.scheduling &&
-        //@ts-ignore
-        navigator.scheduling.isInputPending()
-      ) {
+      //@ts-ignore
+      if (hasNavigatorScheduling && navigator.scheduling.isInputPending()) {
         await yieldToMain();
       }
 
@@ -40,7 +40,7 @@ channel.port1.onmessage = async function () {
 };
 
 export const postMessageTaskQueue = {
-  push: (task) => {
+  push: (task: Task) => {
     tasks.push(task);
   },
   execute: postMessageToTaskQueue,
