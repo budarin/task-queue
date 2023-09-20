@@ -5,7 +5,7 @@ Yet another performance optimized task queue
 Usage example:
 
 ```js
-import { taskQueue } from '@budarin/@budarin/task-queue';
+import { taskQueue } from '@budarin/task-queue';
 
 let t = performance.now();
 
