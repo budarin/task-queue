@@ -27,7 +27,7 @@ channel.port1.onmessage = async function () {
         try {
             task();
         } catch (error) {
-            console.error('[postMessageTaskQueue] Error while running task', error);
+            console.error('[taskQueue] Error while running task', error);
         }
     }
 
@@ -41,7 +41,7 @@ channel.port1.onmessage = async function () {
     }
 };
 
-export const postMessageTaskQueue = {
+export const taskQueue = {
     push: (task: Task) => {
         tasks.push(task);
     },

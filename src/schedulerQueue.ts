@@ -4,7 +4,7 @@ checkForBrowserEnv();
 
 const tasks = [] as Task[];
 
-export const schedulerQueue = {
+export const taskQueue = {
     push: (task: Task) => {
         tasks.push(task);
     },
