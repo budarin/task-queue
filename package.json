@@ -1,10 +1,9 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Task queue",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/types/index.d.ts",
   "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
   "license": "MIT",
@@ -23,7 +22,15 @@
     "registry": "https://registry.npmjs.org/"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "module": "./dist/esm/index.js",
+      "default": "./dist/cjs/index.js"
+    }
   }
 }
