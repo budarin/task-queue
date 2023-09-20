@@ -8,7 +8,7 @@ function postMessageToTaskQueue() {
 channel.port1.onmessage = async function () {
     const task = tasks.shift();
 
-    if (task && typeof task === 'function') {
+    if (task) {
         try {
             task();
         } catch (error) {
@@ -23,7 +23,10 @@ channel.port1.onmessage = async function () {
 
 export const taskQueue = {
     push: (task: Task) => {
-        tasks.push(task);
+        if (typeof task === 'function') {
+            tasks.push(task);
+        }
     },
+
     execute: postMessageToTaskQueue,
 };
