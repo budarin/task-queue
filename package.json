@@ -1,15 +1,23 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Task queue",
   "main": "index.js",
   "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.6.3",
     "typescript": "^5.2.2"
   },
-  "dependencies": {
-    "@types/node": "^20.6.3"
+  "scripts": {
+    "build": "tsc",
+    "npm-publish": "npm run build && npm publish",
+    "upgrade deps": "yarn upgrade-interactive --latest;",
+    "show_what-will-be-published": "npm pack --dry-run"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
