@@ -1,7 +1,3 @@
-import { checkForBrowserEnv } from './checkForBrowserEnv.js';
-
-checkForBrowserEnv();
-
 const tasks = [] as Task[];
 const channel = new MessageChannel();
 
