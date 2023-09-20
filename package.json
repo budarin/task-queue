@@ -8,5 +8,8 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@types/node": "^20.6.3"
   }
 }
