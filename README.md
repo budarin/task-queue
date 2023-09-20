@@ -8,27 +8,27 @@ Usage example:
 let t = performance.now();
 
 taskQueue.push(() => {
-  const t1 = performance.now();
-  console.log(t1 - t);
-  t = t1;
+    const t1 = performance.now();
+    console.log(t1 - t);
+    t = t1;
 });
 
 taskQueue.push(() => {
-  const t1 = performance.now();
-  console.log(t1 - t);
-  t = t1;
+    const t1 = performance.now();
+    console.log(t1 - t);
+    t = t1;
 });
 
 taskQueue.push(() => {
-  const t1 = performance.now();
-  console.log(t1 - t);
-  t = t1;
+    const t1 = performance.now();
+    console.log(t1 - t);
+    t = t1;
 });
 
 taskQueue.push(() => {
-  const t1 = performance.now();
-  console.log(t1 - t);
-  t = t1;
+    const t1 = performance.now();
+    console.log(t1 - t);
+    t = t1;
 });
 
 taskQueue.execute();

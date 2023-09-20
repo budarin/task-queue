@@ -3,18 +3,18 @@ type Task = () => void;
 const tasks = [] as Task[];
 
 export const schedulerQueue = {
-  push: (task: Task) => {
-    tasks.push(task);
-  },
+    push: (task: Task) => {
+        tasks.push(task);
+    },
 
-  execute: async () => {
-    while (tasks.length > 0) {
-      const task = tasks.shift();
+    execute: async () => {
+        while (tasks.length > 0) {
+            const task = tasks.shift();
 
-      if (typeof task === "function") {
-        // @ts-ignore
-        await scheduler.postTask(task);
-      }
-    }
-  },
+            if (typeof task === 'function') {
+                // @ts-ignore
+                await scheduler.postTask(task);
+            }
+        }
+    },
 };
