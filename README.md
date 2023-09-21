@@ -2,8 +2,8 @@
 
 Isomorphic task queue with optimized performance.
 
-This package will help improve one of the key metrics of Web Vitals - FID.
-It is known that for many complex applications, due to the large number of sequentially executed tasks, application initialization takes quite a long time, which worsens this metric..
+This package will help improve some of the key metrics - FID and TBT.
+It is known that for many complex applications, due to the large number of sequentially executed tasks, application initialization takes quite a long time, which worsens these metrics.
 
 In order to give the event loop a little sigh between the execution of numerous tasks, you can use `setTimeout(f, 0)`, but the problem arises that if there are more than `4` tasks in the queue, `setTimeout` will start executing with a delay of `4ms` - this is very much in the case of application initialization (we need to initialize the application as quickly as possible).
 
