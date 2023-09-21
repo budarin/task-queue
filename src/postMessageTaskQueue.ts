@@ -6,7 +6,7 @@ function postMessageToTaskQueue() {
     channel.port2.postMessage(undefined);
 }
 
-channel.port1.onmessage = async function () {
+channel.port1.onmessage = function () {
     const task = queue.shift();
 
     if (task) {
@@ -22,16 +22,23 @@ channel.port1.onmessage = async function () {
     }
 };
 
-export const taskQueue = {
-    push: (...tasks: Task[]) => {
-        for (const task of tasks) {
-            if (typeof task === 'function') {
-                queue.push(task);
-            } else {
-                console.error('[taskQueue] Error: task is not a function!', task);
-            }
+function push(...tasks: Task[]) {
+    for (const task of tasks) {
+        if (typeof task === 'function') {
+            queue.push(task);
+        } else {
+            console.error('[taskQueue] Error: task is not a function!', task);
         }
-    },
+    }
+}
 
+function exec(...tasks: Task[]) {
+    push(...tasks);
+    postMessageToTaskQueue();
+}
+
+export const taskQueue = {
+    push,
+    exec,
     execute: postMessageToTaskQueue,
 };
