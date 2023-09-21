@@ -1,11 +1,11 @@
 type Task = () => void;
-const tasks = [] as Task[];
+const queue = [] as Task[];
 
 export const taskQueue = {
     push: (...tasks: Task[]) => {
         for (const task of tasks) {
             if (typeof task === 'function') {
-                tasks.push(task);
+                queue.push(task);
             } else {
                 console.error('[taskQueue] Error: task is not a function!');
             }
@@ -13,8 +13,8 @@ export const taskQueue = {
     },
 
     execute: async () => {
-        while (tasks.length > 0) {
-            const task = tasks.shift();
+        while (queue.length > 0) {
+            const task = queue.shift();
 
             if (task) {
                 // @ts-ignore

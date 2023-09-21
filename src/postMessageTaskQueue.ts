@@ -1,5 +1,5 @@
 type Task = () => void;
-const tasks = [] as Task[];
+const queue = [] as Task[];
 const channel = new MessageChannel();
 
 function postMessageToTaskQueue() {
@@ -7,7 +7,7 @@ function postMessageToTaskQueue() {
 }
 
 channel.port1.onmessage = async function () {
-    const task = tasks.shift();
+    const task = queue.shift();
 
     if (task) {
         try {
@@ -17,7 +17,7 @@ channel.port1.onmessage = async function () {
         }
     }
 
-    if (tasks.length > 0) {
+    if (queue.length > 0) {
         postMessageToTaskQueue();
     }
 };
@@ -26,7 +26,7 @@ export const taskQueue = {
     push: (...tasks: Task[]) => {
         for (const task of tasks) {
             if (typeof task === 'function') {
-                tasks.push(task);
+                queue.push(task);
             } else {
                 console.error('[taskQueue] Error: task is not a function!');
             }
