@@ -2,11 +2,13 @@ type Task = () => void;
 const tasks = [] as Task[];
 
 export const taskQueue = {
-    push: (task: Task) => {
-        if (typeof task === 'function') {
-            tasks.push(task);
-        } else {
-            console.error('[taskQueue] Error: task is not a function!');
+    push: (...tasks: Task[]) => {
+        for (const task of tasks) {
+            if (typeof task === 'function') {
+                tasks.push(task);
+            } else {
+                console.error('[taskQueue] Error: task is not a function!');
+            }
         }
     },
 

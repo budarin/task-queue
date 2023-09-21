@@ -9,13 +9,13 @@ import { taskQueue } from '@budarin/task-queue';
 
 let t = performance.now();
 
-for (let i = 0; i < 5; i++) {
-    // add tasks to the queue
-    taskQueue.push(() => {
-        console.log(performance.now() - t);
-        t = performance.now();
-    });
-}
+const f = () => {
+    console.log(performance.now() - t);
+    t = performance.now();
+};
+
+taskQueue.push(f);
+taskQueue.push(f, f, f, f);
 
 taskQueue.execute();
 ```
