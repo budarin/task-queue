@@ -10,6 +10,7 @@ import { taskQueue } from '@budarin/task-queue';
 let t = performance.now();
 
 for (let i = 0; i < 5; i++) {
+    // add tasks to the queue
     taskQueue.push(() => {
         console.log(performance.now() - t);
         t = performance.now();
