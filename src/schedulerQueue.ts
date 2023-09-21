@@ -7,7 +7,7 @@ export const taskQueue = {
             if (typeof task === 'function') {
                 queue.push(task);
             } else {
-                console.error('[taskQueue] Error: task is not a function!');
+                console.error('[taskQueue] Error: task is not a function!', task);
             }
         }
     },
