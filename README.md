@@ -6,7 +6,7 @@ In order to give the event loop a little sigh between the execution of numerous 
 
 Under the hood, various techniques are implemented for different environments and browsers:
 
--   for modern browsers `scheduler.postTask(task)`
+-   for modern browsers - `scheduler.postTask(task)`
 -   for the rest - `MessageChannel` is used with a `postMessage` call
 -   for `Node.js` uses a simple task call
 
