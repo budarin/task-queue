@@ -1,7 +1,13 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Task queue",
+  "keywords": [
+    "task",
+    "queue",
+    "FID",
+    "isomorphic"
+  ],
   "repository": "https://github.com/budarin/task-queue.git",
   "author": "Vadim Budarin <budarin-vv@yandex.ru>",
   "license": "MIT",

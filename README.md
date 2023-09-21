@@ -1,6 +1,6 @@
 # task-queue
 
-Yet another performance optimized task queue
+Isomorphic task queue with optimized performance.
 
 Usage example:
 
