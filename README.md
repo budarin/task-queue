@@ -49,3 +49,5 @@ Example of output of time delays between task execution - they are very small:
 
 It can be seen that there is time between tasks so that the event loop can check and, if available, perform other tasks.
 This time is very small and does not add a significant overhead to the overall execution of tasks in the queue.
+
+Distributed CommonJS modules are generated for ES6, and ESM modules are generated for ESNext version of JavaScript.
