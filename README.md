@@ -29,12 +29,16 @@ const f = () => {
 taskQueue.push(f);
 taskQueue.push(f, f, f, f);
 
+// execute tasks in queue
 taskQueue.execute();
 
-// execute tasks immediately after pushing them to the queue
+// execute tasks in queue immediately after pushing them to the queue
 taskQueue.exec(f);
-// execute tasks immediately after pushing them to the queue
-taskQueue.exec(f, f, f, f);
+
+taskQueue.push(f);
+taskQueue.push(f);
+// execute tasks in queue immediately after pushing them to the queue
+taskQueue.exec(f, f);
 ```
 
 Example of output of time delays between task execution - they are very small:
