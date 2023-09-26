@@ -3,14 +3,14 @@ const hasMessageChannel = 'MessageChannel' in globalThis;
 
 function getTaskQueue() {
     if (hasScheduler) {
-        return require('./schedulerQueue.js').taskQueue;
+        return require('./schedulerQueue.js');
     }
 
     if (hasMessageChannel) {
-        return require('./postMessageTaskQueue.js').taskQueue;
+        return require('./postMessageTaskQueue.js');
     }
 
-    return require('./nodeTaskQueue.js').taskQueue;
+    return require('./nodeTaskQueue.js');
 }
 
-export const taskQueue = { taskQueue: getTaskQueue() };
+export const taskQueue = getTaskQueue();
