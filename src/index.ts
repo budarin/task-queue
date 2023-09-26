@@ -13,4 +13,4 @@ function getTaskQueue() {
     return require('nodeTaskQueue.js').taskQueue;
 }
 
-export const taskQueue = getTaskQueue();
+export const taskQueue = { taskQueue: getTaskQueue() };
