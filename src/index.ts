@@ -1,21 +1,25 @@
+import { taskQueue as nodeTaskQueue } from './nodeTaskQueue.js';
+import { taskQueue as schedulerQueue } from './schedulerQueue.js';
+import { getMessageChannelTaskQueue } from './postMessageTaskQueue.js';
+
 const hasScheduler = 'scheduler' in globalThis;
 const hasMessageChannel = 'MessageChannel' in globalThis;
 const isNode = typeof process === 'object' && process + '' === '[object process]';
 
 function getTaskQueue() {
     if (isNode) {
-        return require('./nodeTaskQueue.js');
+        return nodeTaskQueue;
     }
 
     if (hasScheduler) {
-        return require('./schedulerQueue.js');
+        return schedulerQueue;
     }
 
     if (hasMessageChannel) {
-        return require('./postMessageTaskQueue.js');
+        return getMessageChannelTaskQueue();
     }
 
-    return require('./nodeTaskQueue.js');
+    return nodeTaskQueue;
 }
 
-export const { taskQueue } = getTaskQueue();
+export const taskQueue = getTaskQueue();
