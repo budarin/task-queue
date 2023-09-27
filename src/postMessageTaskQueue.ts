@@ -4,11 +4,11 @@ export function getMessageChannelTaskQueue() {
     const queue = [] as Task[];
     const channel = new MessageChannel();
 
-    function postMessageToTaskQueue() {
+    function postMessageToTaskQueue(): void {
         channel.port2.postMessage(undefined);
     }
 
-    channel.port1.onmessage = function () {
+    channel.port1.onmessage = function (): void {
         const task = queue.shift();
 
         if (task) {
@@ -24,7 +24,7 @@ export function getMessageChannelTaskQueue() {
         }
     };
 
-    function push(...tasks: Task[]) {
+    function push(...tasks: Task[]): void {
         for (const task of tasks) {
             if (typeof task === 'function') {
                 queue.push(task);
@@ -34,7 +34,11 @@ export function getMessageChannelTaskQueue() {
         }
     }
 
-    function exec(...tasks: Task[]) {
+    function clear(): void {
+        queue.length = 0;
+    }
+
+    function exec(...tasks: Task[]): void {
         push(...tasks);
         postMessageToTaskQueue();
     }
@@ -43,5 +47,6 @@ export function getMessageChannelTaskQueue() {
         push,
         exec,
         execute: postMessageToTaskQueue,
+        clear,
     };
 }

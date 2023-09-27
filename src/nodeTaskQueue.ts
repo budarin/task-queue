@@ -1,7 +1,7 @@
 type Task = () => void;
 const queue = [] as Task[];
 
-function push(...tasks: Task[]) {
+function push(...tasks: Task[]): void {
     for (const task of tasks) {
         if (typeof task === 'function') {
             queue.push(task);
@@ -11,12 +11,16 @@ function push(...tasks: Task[]) {
     }
 }
 
+function clear(): void {
+    queue.length = 0;
+}
+
 function exec(...tasks: Task[]) {
     push(...tasks);
     execute();
 }
 
-function execute() {
+function execute(): void {
     while (queue.length > 0) {
         const task = queue.shift();
 
@@ -36,4 +40,5 @@ export const taskQueue = {
     push,
     exec,
     execute,
+    clear,
 };

@@ -39,6 +39,10 @@ taskQueue.push(f);
 taskQueue.push(f);
 // execute tasks in queue immediately after pushing them to the queue
 taskQueue.exec(f, f);
+
+taskQueue.push(f, f, f, f);
+// удаляем все задачи из очереди
+taskQueue.clear();
 ```
 
 Example of output of time delays between task execution - they are very small:
