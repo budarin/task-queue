@@ -25,23 +25,23 @@ const f = () => {
     t = performance.now();
 };
 
-// pushing tsks to the queue for executing them lately
+// push tsks to the queue for executing them lately
 taskQueue.push(f);
 taskQueue.push(f, f, f, f);
 
-// execute tasks in queue
+// executing tasks in queue
 taskQueue.execute();
 
-// execute tasks in queue immediately after pushing them to the queue
+// executing tasks in queue immediately after pushing them to the queue
 taskQueue.exec(f);
 
 taskQueue.push(f);
 taskQueue.push(f);
-// execute tasks in queue immediately after pushing them to the queue
+// executing tasks in queue immediately after pushing them to the queue
 taskQueue.exec(f, f);
 
 taskQueue.push(f, f, f, f);
-// удаляем все задачи из очереди
+// clearing taskQueue
 taskQueue.clear();
 ```
 
