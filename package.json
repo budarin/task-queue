@@ -1,6 +1,6 @@
 {
   "name": "@budarin/task-queue",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "Task queue",
   "keywords": [
     "task",
