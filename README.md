@@ -25,7 +25,7 @@ const f = () => {
     t = performance.now();
 };
 
-// push tsks to the queue for executing them lately
+// pushing tasks to the queue for executing them lately
 taskQueue.push(f);
 taskQueue.push(f, f, f, f);
 
