@@ -2,6 +2,8 @@
 
 Isomorphic task queue with optimized performance.
 
+The incentive to write this package was the article: ["Task Scheduler: do not freeze the tab when opening the page"](https://habr.com/ru/companies/jugru/articles/716620/)
+
 This package will help improve some of the key metrics - FID, TTI and TBT.
 It is known that for many complex applications, due to the large number of sequentially executed tasks, app initialization takes quite a long time, which worsens these metrics.
 
