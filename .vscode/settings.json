@@ -68,7 +68,7 @@
     "git.autofetchPeriod": 60,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
-    "git.branchProtection": ["master"],
+    // "git.branchProtection": ["master"],
     "git.checkoutType": ["local", "remote"],
     "git.ignoreRebaseWarning": true,
     "git.inputValidationSubjectLength": 100,
