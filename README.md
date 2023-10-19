@@ -61,3 +61,11 @@ It can be seen that there is time between tasks so that the event loop can check
 This time is very small and does not add a significant overhead to the overall execution of tasks in the queue.
 
 Distributed CommonJS modules are generated for ES6, and ESM modules are generated for ESNext version of JavaScript.
+
+Below is the original flame graph of the long initialization of the application
+
+![log task](assets/long-task.png)
+
+and an example of optimizing long initialization by splitting it into small tasks that do not block the main thread
+
+![ыьфдд ефылы](assets/small-tasks.png)
