@@ -62,10 +62,10 @@ This time is very small and does not add a significant overhead to the overall e
 
 Distributed CommonJS modules are generated for ES6, and ESM modules are generated for ESNext version of JavaScript.
 
-Below is the original flame graph of the long initialization of the application
+Below is an example of the original flame-graph of long-term initialization of the application
 
 ![log task](assets/long-task.png)
 
-and an example of optimizing long initialization by splitting it into small tasks that do not block the main thread
+and an example of optimizing long initialization by splitting it into small tasks that do not block for a long time the main thread
 
 ![ыьфдд ефылы](assets/small-tasks.png)
