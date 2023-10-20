@@ -25,13 +25,11 @@ function execute(): void {
         const task = queue.shift();
 
         if (task) {
-            // setImmediate(() => {
             try {
-                task();
+                setImmediate(task);
             } catch (error) {
                 console.error('[taskQueue] Error while running task', error);
             }
-            // });
         }
     }
 }

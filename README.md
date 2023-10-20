@@ -13,7 +13,7 @@ Under the hood, various techniques are implemented for different environments an
 
 -   for modern browsers - `scheduler.postTask(task)`
 -   for the rest - `MessageChannel` is used with a `postMessage` call
--   for `Node.js` uses a simple task call
+-   for `Node.js` - `setImmediate`
 
 Usage example:
 
