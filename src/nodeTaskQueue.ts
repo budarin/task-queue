@@ -26,7 +26,7 @@ function execute(): void {
 
         if (task) {
             try {
-                setImmediate ? setImmediate(task) : task();
+                'setImmediate' in globalThis ? setImmediate(task) : task();
             } catch (error) {
                 console.error('[taskQueue] Error while running task', error);
             }
