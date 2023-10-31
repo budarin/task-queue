@@ -1,46 +1,46 @@
 {
-  "name": "@budarin/task-queue",
-  "version": "1.0.37",
-  "description": "Task queue",
-  "keywords": [
-    "task",
-    "queue",
-    "isomorphic",
-    "FID",
-    "TBT"
-  ],
-  "repository": "https://github.com/budarin/task-queue.git",
-  "author": "Vadim Budarin <budarin-vv@yandex.ru>",
-  "license": "MIT",
-  "main": "./dist/cjs/index.js",
-  "types": "./dist/cjs/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "module": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "types": "./dist/types/index.d.ts",
-      "default": "./dist/cjs/index.js"
+    "name": "@budarin/task-queue",
+    "version": "1.0.38",
+    "description": "Task queue",
+    "keywords": [
+        "task",
+        "queue",
+        "isomorphic",
+        "FID",
+        "TBT"
+    ],
+    "repository": "https://github.com/budarin/task-queue.git",
+    "author": "Vadim Budarin <budarin-vv@yandex.ru>",
+    "license": "MIT",
+    "main": "./dist/cjs/index.js",
+    "types": "./dist/cjs/index.d.ts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": {
+                "types": "./dist/esm/index.d.ts",
+                "default": "./dist/esm/index.js"
+            },
+            "module": {
+                "types": "./dist/esm/index.d.ts",
+                "default": "./dist/esm/index.js"
+            },
+            "types": "./dist/types/index.d.ts",
+            "default": "./dist/cjs/index.js"
+        }
+    },
+    "devDependencies": {
+        "@types/node": "^20.8.7",
+        "typescript": "^5.2.2"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "build": "sh ./scripts/build.sh",
+        "npm-publish": "npm run build && npm publish",
+        "upgrade deps": "yarn upgrade-interactive --latest;",
+        "show what will be published": "npm pack --dry-run"
     }
-  },
-  "devDependencies": {
-    "@types/node": "^20.8.7",
-    "typescript": "^5.2.2"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "scripts": {
-    "build": "sh ./scripts/build.sh",
-    "npm-publish": "npm run build && npm publish",
-    "upgrade deps": "yarn upgrade-interactive --latest;",
-    "show what will be published": "npm pack --dry-run"
-  }
 }
