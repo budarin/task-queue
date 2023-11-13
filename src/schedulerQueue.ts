@@ -2,13 +2,13 @@ type Task = () => void;
 const queue = [] as Task[];
 
 function push(...tasks: Task[]): void {
-    for (const task of tasks) {
+    tasks.forEach((task) => {
         if (typeof task === 'function') {
             queue.push(task);
         } else {
             console.error('[taskQueue] Error: task is not a function!', task);
         }
-    }
+    });
 }
 
 function clear(): void {
